@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Claim Course Seat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans TC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden" style='font-family: "Space Grotesk", "Noto Sans TC", sans-serif;'>
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<button class="text-slate-800 dark:text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h2 class="text-slate-800 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">認領課程席位</h2>
+<div class="size-12"></div>
+</div>
+<div class="flex flex-col flex-1 justify-center pb-16">
+<h2 class="text-slate-800 dark:text-white tracking-light text-[28px] font-bold leading-tight px-4 text-center pb-3 pt-5">請輸入您的8位課程邀請碼以加入課程</h2>
+<div class="flex justify-center px-4 py-3">
+<fieldset class="relative flex gap-2 sm:gap-4">
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase();if(this.value.length&gt;0)this.nextSibling&amp;&amp;this.nextSibling.focus();" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase();if(this.value.length&gt;0)this.nextSibling&amp;&amp;this.nextSibling.focus();" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase();if(this.value.length&gt;0)this.nextSibling&amp;&amp;this.nextSibling.focus();" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase();if(this.value.length&gt;0)this.nextSibling&amp;&amp;this.nextSibling.focus();" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase();if(this.value.length&gt;0)this.nextSibling&amp;&amp;this.nextSibling.focus();" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase();if(this.value.length&gt;0)this.nextSibling&amp;&amp;this.nextSibling.focus();" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase();if(this.value.length&gt;0)this.nextSibling&amp;&amp;this.nextSibling.focus();" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+<input class="flex h-14 w-10 sm:w-12 text-center text-slate-800 dark:text-white text-2xl font-bold bg-transparent [appearance:textfield] focus:outline-0 focus:ring-0 [&amp;::-webkit-inner-spin-button]:appearance-none [&amp;::-webkit-outer-spin-button]:appearance-none border-0 border-b-2 border-slate-300 dark:border-slate-700 focus:border-primary" maxlength="1" oninput="javascript:this.value=this.value.toUpperCase()" onkeydown="javascript:(event.key=='Backspace'&amp;&amp;this.value===''&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowLeft'&amp;&amp;this.previousSibling&amp;&amp;this.previousSibling.focus())||(event.key==='ArrowRight'&amp;&amp;this.nextSibling&amp;&amp;this.nextSibling.focus());" type="text"/>
+</fieldset>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center">
+<a class="underline" href="#">邀請碼已透過Email或簡訊發送給您，請檢查您的信箱。</a>
+</p>
+</div>
+<div class="px-4 py-3 sticky bottom-0 bg-background-light dark:bg-background-dark">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 flex-1 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] w-full disabled:bg-slate-300 dark:disabled:bg-slate-700 disabled:text-slate-500 dark:disabled:text-slate-400" disabled="">
+<span class="truncate">下一步</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3498db",
+              "background-light": "#f4f6f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "Noto Sans TC", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+<style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden pb-20">
+<div class="sticky top-0 z-10 bg-background-light dark:bg-background-dark pt-4">
+<div class="flex items-center bg-background-light dark:bg-background-dark px-4 pb-2 justify-between">
+<div class="text-gray-800 dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</div>
+<h2 class="text-gray-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">學生管理</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-500 dark:text-gray-400 flex border-none bg-white dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-gray-800 focus:border-none h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="搜尋學生姓名" value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 p-3 overflow-x-auto">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-white/10 pl-4 pr-2">
+<p class="text-primary dark:text-white text-sm font-medium leading-normal">全部</p>
+<span class="material-symbols-outlined text-primary dark:text-white text-lg">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 pl-4 pr-2">
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">程度</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-lg">expand_more</span>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white dark:bg-gray-800 pl-4 pr-2">
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">最近評量日期</p>
+<span class="material-symbols-outlined text-gray-500 dark:text-gray-400 text-lg">expand_more</span>
+</button>
+</div>
+<div class="flex flex-col gap-2 px-4 py-2">
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 px-4 min-h-[80px] py-3 justify-between rounded-xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="A portrait of Wang Xiaoming" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAPBqssLYdx-U-IqMDKu3fItNPO5FhoGRC4m2U5aYtQl4fkhL1BGE2T7f83qljKPb_TX3rzo-Qc18XrXdg2EYhpqCV5N4wYX474w2kL5G7e4BTqp8PPlph8iK-shfBhXLDZwL8XOqZUwjqIIMYViVFxF1vYEByCZ9fkFyGV2_a-KFryqnNj2sbb9nf9T42bXzoYxtH_yeApygL86IjBgEI7cOqV62ReL0nGJip3Qkfdfnset_60tF-tOy9ElYfyTcPYsr8KFQLnzQOs");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">王小明</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">程度：初級班</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">最近評量：2023/12/15</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 px-4 min-h-[80px] py-3 justify-between rounded-xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="A portrait of Chen Meiling" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCLLLNW2zvlj65xoyLdZl1SLJtsgxnWkrQpmu2XltU_AAmG7QtXwmPt7bzYl5laxyuKAe_--X2vnRikpKjvh_pKyF9S8GZ3rw2Firulaaxt4yajCyu0BVY1K3n_DhzvtrFHsJqZiRMFzaod6qsw3EXyZ3AowtII1yWCvfc5h4y-2FXHNreMPL_yvNRFQC6udrEFeLui2HfktmrWVru6k2aOWT0xj5UYLbLL6nWEo4DBwn_5HvPFEA2Z-Pm_DzckgxPnR8hbDVi1nMhx");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">陳美玲</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">程度：中級班</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">最近評量：2023/12/14</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 px-4 min-h-[80px] py-3 justify-between rounded-xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="A portrait of Li Zhiwei" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbA3FW-WOAOtGLnF_mQqE_3a_Obp508vdTGcHJKHRYzWsr7bwbuiiTGcmvz_1vLFAX8A2Z3o9Xl8aF9YKESVWzhM777-NCVr7-cBJV6egHi2-EiZdlxR31ewG94z4kNuAAdp-kS9_0ZqBUpXtngD7MFUIx1N9ahzpcdU6CaHREboSfYcJl-LJ_BfEJTQwkhCVyy7-VmyRn_Oc2CMyOUOthJ0Woi3tDEMFt948zRlEesp2uroL-SP9exH1xIjiDmH4aIVQEt1DlKk6q");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">李志偉</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">程度：高級班</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">最近評量：2023/12/10</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-gray-800 px-4 min-h-[80px] py-3 justify-between rounded-xl shadow-sm">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-14" data-alt="A portrait of Zhang Yating" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZ4YQWig62j9h05eDGwIjdVmeo45v9vv9-6zCx2fD4okzm0lg_VdQL4Lj0x-DiMpVE_HjbK7WjXX_HIttllxU74dMjcpQfIQu0Hqw-vsiqMBOYztAEL_SMx2jP5fHCmBcOaGXs8AAQNQgtg6bRPyt8eHQmGAIazqBIX84mVzHE_ywiy9fMl8nmI8XI5IRMuYfks9f7e9ikWwjXZVgAPYPv4u0-Vsyh8l04XgRtdvRMEFEsVDQI3biSGaLMQRcUqqwbEZSJArKvvJPD");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal line-clamp-1">張雅婷</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">程度：初級班</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">最近評量：2023/11/28</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="text-gray-400 dark:text-gray-500 flex size-7 items-center justify-center">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+<div class="text-center py-16 px-4 hidden">
+<div class="flex justify-center mb-4">
+<span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-600">group_off</span>
+</div>
+<p class="text-gray-700 dark:text-gray-300 font-medium">找不到符合的學生</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm mt-1">請嘗試調整您的篩選條件。</p>
+</div>
+</div>
+<div class="flex-grow"></div>
+<div class="fixed bottom-0 left-0 right-0 z-20 h-20 border-t border-gray-200 bg-white/80 backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/80">
+<nav class="flex h-full items-center justify-around">
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-xs">儀表板</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-xs">紀錄</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="text-xs font-bold">學生</span>
+</a>
+</nav>
+</div>
+</div>
+
+</body></html>

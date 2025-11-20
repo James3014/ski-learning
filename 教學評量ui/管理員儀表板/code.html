@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - Ski Instruction Evaluation System</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3498DB",
+                        "background-light": "#E0F7FA",
+                        "background-dark": "#101c22",
+                        "accent-warning": "#F39C12",
+                        "accent-danger": "#E74C3C",
+                        "text-primary": "#2C3E50",
+                        "text-secondary": "#7F8C8D",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans TC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-200 dark:border-gray-700">
+<div class="flex size-12 shrink-0 items-center text-primary">
+<span class="material-symbols-outlined text-3xl">ac_unit</span>
+</div>
+<h1 class="text-text-primary dark:text-white text-xl font-bold leading-tight tracking-tight flex-1">管理員儀表板</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-200 dark:bg-gray-700 text-text-primary dark:text-white">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+<main class="flex flex-col gap-6 p-4 md:p-6">
+<div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
+<p class="text-text-secondary dark:text-gray-400 text-sm font-medium leading-normal">未評量課程</p>
+<div class="flex items-baseline gap-2">
+<p class="text-accent-warning tracking-light text-2xl font-bold leading-tight">8</p>
+<span class="text-text-secondary dark:text-gray-400 text-xs">堂</span>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
+<p class="text-text-secondary dark:text-gray-400 text-sm font-medium leading-normal">已評量課程</p>
+<div class="flex items-baseline gap-2">
+<p class="text-primary tracking-light text-2xl font-bold leading-tight">125</p>
+<span class="text-text-secondary dark:text-gray-400 text-xs">堂</span>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
+<p class="text-text-secondary dark:text-gray-400 text-sm font-medium leading-normal">未評量學生</p>
+<div class="flex items-baseline gap-2">
+<p class="text-accent-warning tracking-light text-2xl font-bold leading-tight">15</p>
+<span class="text-text-secondary dark:text-gray-400 text-xs">位</span>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 shadow-sm">
+<p class="text-text-secondary dark:text-gray-400 text-sm font-medium leading-normal">已評量學生</p>
+<div class="flex items-baseline gap-2">
+<p class="text-primary tracking-light text-2xl font-bold leading-tight">350</p>
+<span class="text-text-secondary dark:text-gray-400 text-xs">位</span>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-text-primary dark:text-white text-xl font-bold leading-tight tracking-tight px-0 pb-3 pt-5">快速入口</h2>
+<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+<a class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 items-center justify-center text-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm h-24" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">collections_bookmark</span>
+<h3 class="text-text-primary dark:text-white text-sm font-bold leading-tight">課程管理</h3>
+</a>
+<a class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 items-center justify-center text-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm h-24" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">storage</span>
+<h3 class="text-text-primary dark:text-white text-sm font-bold leading-tight">資料維護</h3>
+</a>
+<a class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 items-center justify-center text-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm h-24" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">grading</span>
+<h3 class="text-text-primary dark:text-white text-sm font-bold leading-tight">評量管理</h3>
+</a>
+<a class="flex flex-col gap-2 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-4 items-center justify-center text-center hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors shadow-sm h-24" href="#">
+<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+<h3 class="text-text-primary dark:text-white text-sm font-bold leading-tight">報表分析</h3>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h2 class="text-text-primary dark:text-white text-xl font-bold leading-tight tracking-tight px-0 pb-1 pt-5">最新動態</h2>
+<div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm overflow-hidden">
+<ul class="divide-y divide-gray-200 dark:divide-gray-700">
+<li class="p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400">person_add</span>
+<p class="text-text-primary dark:text-gray-300 text-sm">教練 <span class="font-semibold text-primary">張三</span> 提交了審核申請。</p>
+</div>
+<span class="text-text-secondary dark:text-gray-500 text-xs">2分鐘前</span>
+</li>
+<li class="p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400">check_circle</span>
+<p class="text-text-primary dark:text-gray-300 text-sm">課程 <span class="font-semibold text-primary">初級單板滑行</span> 已完成評量。</p>
+</div>
+<span class="text-text-secondary dark:text-gray-500 text-xs">1小時前</span>
+</li>
+<li class="p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400">add_circle</span>
+<p class="text-text-primary dark:text-gray-300 text-sm">學生 <span class="font-semibold text-primary">李四</span> 註冊了新帳號。</p>
+</div>
+<span class="text-text-secondary dark:text-gray-500 text-xs">3小時前</span>
+</li>
+<li class="p-4 flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-text-secondary dark:text-gray-400">warning</span>
+<p class="text-text-primary dark:text-gray-300 text-sm">系統將於 <span class="font-semibold text-accent-warning">2024/08/01 02:00</span> 進行維護。</p>
+</div>
+<span class="text-text-secondary dark:text-gray-500 text-xs">1天前</span>
+</li>
+</ul>
+</div>
+</div>
+</main>
+</div>
+</body></html>

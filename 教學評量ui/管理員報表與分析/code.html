@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reports &amp; Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3498DB",
+                        "background-light": "#ECF0F1",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans TC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#34495E] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<button class="text-[#34495E] dark:text-white flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-[#34495E] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">報表與分析</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="text-primary text-base font-bold leading-normal tracking-[0.015em] shrink-0">Export</button>
+</div>
+</div>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-[#34495E] dark:text-white text-base font-medium leading-normal pb-2">Date Range</p>
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#34495E] dark:text-white focus:outline-0 focus:ring-0 border border-gray-300 dark:border-[#3b4b54] bg-background-light dark:bg-[#1c2327] focus:border-primary h-14 placeholder:text-gray-500 dark:placeholder:text-[#9db0b9] p-[15px] text-base font-normal leading-normal">
+<option value="last-month">Last Month</option>
+<option value="last-week">Last Week</option>
+<option value="custom">Custom Range</option>
+</select>
+</label>
+</div>
+<div class="pb-3">
+<div class="flex border-b border-gray-300 dark:border-[#3b4b54] px-4 justify-between">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">教練表現</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-[#9db0b9] pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">學生參與度</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-gray-500 dark:text-[#9db0b9] pb-[13px] pt-4 flex-1" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">雪場使用率</p>
+</a>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-gray-300 dark:border-[#3b4b54] bg-white dark:bg-[#1c2327]">
+<p class="text-[#34495E] dark:text-white text-base font-medium leading-normal">教練總完成率</p>
+<p class="text-[#34495E] dark:text-white tracking-light text-2xl font-bold leading-tight">88%</p>
+<p class="text-[#2ECC71] text-base font-medium leading-normal">+5%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-gray-300 dark:border-[#3b4b54] bg-white dark:bg-[#1c2327]">
+<p class="text-[#34495E] dark:text-white text-base font-medium leading-normal">學生總參與數</p>
+<p class="text-[#34495E] dark:text-white tracking-light text-2xl font-bold leading-tight">1,234</p>
+<p class="text-[#2ECC71] text-base font-medium leading-normal">+120</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-gray-300 dark:border-[#3b4b54] bg-white dark:bg-[#1c2327]">
+<p class="text-[#34495E] dark:text-white text-base font-medium leading-normal">最受歡迎雪場</p>
+<p class="text-[#34495E] dark:text-white tracking-light text-2xl font-bold leading-tight">雪世界</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 px-4 py-6">
+<div class="flex min-w-72 flex-1 flex-col gap-2 rounded-lg border border-gray-300 dark:border-[#3b4b54] p-6 bg-white dark:bg-[#1c2327]">
+<p class="text-[#34495E] dark:text-white text-base font-medium leading-normal">教練完成率統計</p>
+<p class="text-[#34495E] dark:text-white tracking-light text-[32px] font-bold leading-tight truncate">88%</p>
+<div class="flex gap-1">
+<p class="text-gray-500 dark:text-[#9db0b9] text-base font-normal leading-normal">Last 30 days</p>
+<p class="text-[#2ECC71] text-base font-medium leading-normal">+5%</p>
+</div>
+<div class="grid min-h-[180px] grid-flow-col gap-6 grid-rows-[1fr_auto] items-end justify-items-center px-3 pt-4">
+<div class="bg-primary/20 w-full rounded-t-md" style="height: 100%;"></div>
+<p class="text-gray-500 dark:text-[#9db0b9] text-[13px] font-bold leading-normal tracking-[0.015em]">教練A</p>
+<div class="bg-primary/20 w-full rounded-t-md" style="height: 60%;"></div>
+<p class="text-gray-500 dark:text-[#9db0b9] text-[13px] font-bold leading-normal tracking-[0.015em]">教練B</p>
+<div class="bg-primary/20 w-full rounded-t-md" style="height: 50%;"></div>
+<p class="text-gray-500 dark:text-[#9db0b9] text-[13px] font-bold leading-normal tracking-[0.015em]">教練C</p>
+<div class="bg-primary w-full rounded-t-md" style="height: 90%;"></div>
+<p class="text-primary text-[13px] font-bold leading-normal tracking-[0.015em]">教練D</p>
+</div>
+</div>
+</div>
+<div class="px-4 pb-6">
+<div class="overflow-x-auto rounded-lg border border-gray-300 dark:border-[#3b4b54] bg-white dark:bg-[#1c2327]">
+<table class="w-full text-left text-sm text-[#34495E] dark:text-white">
+<thead class="bg-gray-50 dark:bg-gray-700/50">
+<tr>
+<th class="px-6 py-3 font-medium" scope="col">Coach Name</th>
+<th class="px-6 py-3 font-medium" scope="col">Completed</th>
+<th class="px-6 py-3 font-medium" scope="col">Total</th>
+<th class="px-6 py-3 font-medium" scope="col">Completion %</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-gray-200 dark:border-[#3b4b54]">
+<th class="px-6 py-4 font-medium whitespace-nowrap" scope="row">教練A</th>
+<td class="px-6 py-4">40</td>
+<td class="px-6 py-4">40</td>
+<td class="px-6 py-4">100%</td>
+</tr>
+<tr class="border-t border-gray-200 dark:border-[#3b4b54]">
+<th class="px-6 py-4 font-medium whitespace-nowrap" scope="row">教練B</th>
+<td class="px-6 py-4">24</td>
+<td class="px-6 py-4">40</td>
+<td class="px-6 py-4">60%</td>
+</tr>
+<tr class="border-t border-gray-200 dark:border-[#3b4b54]">
+<th class="px-6 py-4 font-medium whitespace-nowrap" scope="row">教練C</th>
+<td class="px-6 py-4">20</td>
+<td class="px-6 py-4">40</td>
+<td class="px-6 py-4 text-[#E74C3C]">50%</td>
+</tr>
+<tr class="border-t border-gray-200 dark:border-[#3b4b54]">
+<th class="px-6 py-4 font-medium whitespace-nowrap text-primary" scope="row">教練D</th>
+<td class="px-6 py-4">36</td>
+<td class="px-6 py-4">40</td>
+<td class="px-6 py-4 text-primary">90%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</body></html>

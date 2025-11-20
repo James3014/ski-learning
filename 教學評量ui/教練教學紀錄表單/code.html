@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>教學評量</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3498db",
+                        "secondary": "#e67e22",
+                        "accent": "#1abc9c",
+                        "background-light": "#f4f6f8",
+                        "background-dark": "#101c22",
+                        "text-light": "#333333",
+                        "text-dark": "#f4f6f8",
+                        "placeholder-light": "#a0aec0",
+                        "placeholder-dark": "#9db0b9"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans TC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .collapse-content {
+      display: none;
+    }
+    .collapse-toggle:checked ~ .collapse-content {
+      display: block;
+    }
+    .collapse-toggle:checked ~ .collapse-title .collapse-icon {
+      transform: rotate(180deg);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 shadow-sm dark:shadow-md dark:shadow-black/20">
+<button class="text-text-light dark:text-text-dark flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">分析與評量</h1>
+<div class="w-12"></div>
+</div>
+<main class="flex-1 px-4 py-6 space-y-6">
+<div class="bg-white dark:bg-[#192730] p-5 rounded-xl shadow-sm">
+<h2 class="text-lg font-bold text-text-light dark:text-text-dark mb-4">能力評分</h2>
+<div class="space-y-5">
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark text-base font-medium">基本滑行</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star_outline</span>
+<span class="material-symbols-outlined text-sm filled">star</span>
+<span class="material-symbols-outlined text-sm filled">star</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<p class="text-xs text-text-light/70 dark:text-text-dark/70 mr-1">了解</p>
+<button class="text-secondary">
+<span class="material-symbols-outlined filled">star</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined">star_outline</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined">star_outline</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark text-base font-medium">C-Turn</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star_outline</span>
+<span class="material-symbols-outlined text-sm filled">star</span>
+<span class="material-symbols-outlined text-sm">star_outline</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<p class="text-xs text-text-light/70 dark:text-text-dark/70 mr-1">熟悉</p>
+<button class="text-secondary">
+<span class="material-symbols-outlined filled">star</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined filled">star</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined">star_outline</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark text-base font-medium">S-Turn</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm">star_outline</span>
+<span class="material-symbols-outlined text-sm">star_outline</span>
+<span class="material-symbols-outlined text-sm">star_outline</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<p class="text-xs text-text-light/70 dark:text-text-dark/70 mr-1">精通</p>
+<button class="text-secondary">
+<span class="material-symbols-outlined filled">star</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined filled">star</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined filled">star</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<p class="text-text-light dark:text-text-dark text-base font-medium">落葉飄</p>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm filled">star</span>
+<span class="material-symbols-outlined text-sm">star_outline</span>
+<span class="material-symbols-outlined text-sm">star_outline</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<p class="text-xs text-text-light/70 dark:text-text-dark/70 mr-1">了解</p>
+<button class="text-secondary">
+<span class="material-symbols-outlined filled">star</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined">star_outline</span>
+</button>
+<button class="text-secondary">
+<span class="material-symbols-outlined">star_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-background-light dark:border-background-dark mt-6 mb-4"></div>
+<div class="space-y-2">
+<div class="pt-2">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">學生類型</p>
+<div class="flex flex-wrap gap-3">
+<label class="flex items-center gap-2 bg-background-light dark:bg-background-dark rounded-full px-4 py-2 cursor-pointer has-[:checked]:bg-primary has-[:checked]:text-white dark:has-[:checked]:bg-primary dark:has-[:checked]:text-text-dark transition-colors duration-200">
+<input class="form-checkbox rounded-full text-primary focus:ring-primary/50 dark:bg-background-dark dark:border-text-dark/50" name="student_type" type="checkbox" value="doer"/>
+<span class="text-sm font-medium">實踐型 (Doer)</span>
+</label>
+<label class="flex items-center gap-2 bg-background-light dark:bg-background-dark rounded-full px-4 py-2 cursor-pointer has-[:checked]:bg-primary has-[:checked]:text-white dark:has-[:checked]:bg-primary dark:has-[:checked]:text-text-dark transition-colors duration-200">
+<input checked="" class="form-checkbox rounded-full text-primary focus:ring-primary/50 dark:bg-background-dark dark:border-text-dark/50" name="student_type" type="checkbox" value="thinker"/>
+<span class="text-sm font-medium">思考型 (Thinker)</span>
+</label>
+<label class="flex items-center gap-2 bg-background-light dark:bg-background-dark rounded-full px-4 py-2 cursor-pointer has-[:checked]:bg-primary has-[:checked]:text-white dark:has-[:checked]:bg-primary dark:has-[:checked]:text-text-dark transition-colors duration-200">
+<input class="form-checkbox rounded-full text-primary focus:ring-primary/50 dark:bg-background-dark dark:border-text-dark/50" name="student_type" type="checkbox" value="watcher"/>
+<span class="text-sm font-medium">觀察型 (Watcher)</span>
+</label>
+</div>
+</div>
+<div class="relative">
+<input checked="" class="collapse-toggle absolute opacity-0 inset-0 peer z-10 w-full h-full cursor-pointer" id="collapse-analysis" type="checkbox"/>
+<label class="collapse-title flex items-center justify-between cursor-pointer py-2" for="collapse-analysis">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">分析（學生問題）</p>
+<span class="material-symbols-outlined collapse-icon transition-transform duration-300">expand_more</span>
+</label>
+<div class="collapse-content pt-2">
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-4 text-base font-normal leading-normal appearance-none bg-no-repeat bg-right" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27%23a0aec0%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M215.39,92.94a8,8,0,0,0-11.32,0L128,169.37,51.94,93.31A8,8,0,0,0,40.63,104.63l80,80a8,8,0,0,0,11.31,0l80-80A8,8,0,0,0,215.39,92.94Z%27%3e%3c/path%3e%3c/svg%3e');">
+<option>請選擇問題</option>
+<option selected="">重心後傾</option>
+<option>內腳過度用力</option>
+<option>上半身帶動不足</option>
+<option>手部姿勢不當</option>
+</select>
+</div>
+</div>
+<div class="relative">
+<input class="collapse-toggle absolute opacity-0 inset-0 peer z-10 w-full h-full cursor-pointer" id="collapse-improvement" type="checkbox"/>
+<label class="collapse-title flex items-center justify-between cursor-pointer py-2" for="collapse-improvement">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">改進（練習方法）</p>
+<span class="material-symbols-outlined collapse-icon transition-transform duration-300">expand_more</span>
+</label>
+<div class="collapse-content pt-2">
+<select class="form-select flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-4 text-base font-normal leading-normal appearance-none bg-no-repeat bg-right" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27%23a0aec0%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M215.39,92.94a8,8,0,0,0-11.32,0L128,169.37,51.94,93.31A8,8,0,0,0,40.63,104.63l80,80a8,8,0,0,0,11.31,0l80-80A8,8,0,0,0,215.39,92.94Z%27%3e%3c/path%3e%3c/svg%3e');">
+<option>請選擇練習方法</option>
+<option selected="">J-Turn</option>
+<option>單腳滑行</option>
+<option>落葉飄</option>
+<option>C-Turn</option>
+</select>
+</div>
+</div>
+<div class="relative">
+<input class="collapse-toggle absolute opacity-0 inset-0 peer z-10 w-full h-full cursor-pointer" id="collapse-videos" type="checkbox"/>
+<label class="collapse-title flex items-center justify-between cursor-pointer py-2" for="collapse-videos">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">改進前後影片</p>
+<span class="material-symbols-outlined collapse-icon transition-transform duration-300">expand_more</span>
+</label>
+<div class="collapse-content pt-2">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<label class="flex flex-col">
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-4 pr-2 text-base font-normal leading-normal" placeholder="改進前影片連結"/>
+<button class="text-text-light/60 dark:text-text-dark/60 flex border-none bg-background-light dark:bg-background-dark items-center justify-center px-4 rounded-r-lg">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+</div>
+</label>
+<label class="flex flex-col">
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-14 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-4 pr-2 text-base font-normal leading-normal" placeholder="改進後影片連結"/>
+<button class="text-text-light/60 dark:text-text-dark/60 flex border-none bg-background-light dark:bg-background-dark items-center justify-center px-4 rounded-r-lg">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+</div>
+</label>
+</div>
+</div>
+</div>
+<div class="pt-2">
+<label class="flex flex-col">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">優點</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-28 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-4 text-base font-normal leading-normal" placeholder="描述學生的優點..."></textarea>
+</label>
+</div>
+<div class="pt-2">
+<label class="flex flex-col">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">建議嘗試</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-28 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-4 text-base font-normal leading-normal" placeholder="下次可以嘗試的技巧或練習..."></textarea>
+</label>
+</div>
+<div class="pt-2">
+<label class="flex flex-col">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">評語</p>
+<textarea class="form-textarea flex w-full min-w-0 flex-1 resize-y overflow-hidden rounded-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-0 border-none bg-background-light dark:bg-background-dark focus:border-none h-28 placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark p-4 text-base font-normal leading-normal" placeholder="輸入總體評語或額外備註..."></textarea>
+</label>
+</div>
+</div>
+</div>
+<div class="h-24"></div>
+</main>
+<button class="fixed bottom-8 right-6 bg-secondary hover:bg-secondary/90 text-white font-bold py-4 px-6 rounded-full shadow-lg z-20 flex items-center gap-2">
+<span class="material-symbols-outlined">save</span>
+        儲存
+    </button>
+<div class="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 hidden" id="confirmation-modal">
+<div class="bg-white dark:bg-[#192730] rounded-xl shadow-2xl w-full max-w-md m-auto">
+<div class="p-6">
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark text-center mb-2">確認紀錄</h2>
+<p class="text-center text-text-light/70 dark:text-text-dark/70 mb-6">請確認以下資訊是否正確</p>
+<div class="space-y-3 text-text-light dark:text-text-dark">
+<div class="flex justify-between">
+<span class="font-medium text-text-light/80 dark:text-text-dark/80">學生:</span>
+<span>陳大明</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium text-text-light/80 dark:text-text-dark/80">問題分析:</span>
+<span>重心後傾</span>
+</div>
+<div class="flex justify-between">
+<span class="font-medium text-text-light/80 dark:text-text-dark/80">練習方法:</span>
+<span>J-Turn</span>
+</div>
+</div>
+</div>
+<div class="px-6 py-4 bg-background-light/50 dark:bg-background-dark/50 flex justify-end gap-3 rounded-b-xl">
+<button class="px-6 py-2 rounded-lg text-text-light dark:text-text-dark font-semibold">取消</button>
+<button class="px-6 py-2 rounded-lg bg-primary text-white font-semibold">確認</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    // Example script to toggle modal
+    const fab = document.querySelector('.fixed.bottom-8');
+    const modal = document.getElementById('confirmation-modal');
+    const cancelButtons = modal.querySelectorAll('button');
+    fab.addEventListener('click', () => {
+        modal.classList.remove('hidden');
+    });
+    cancelButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+    });
+    // Clicking outside the modal content to close it
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.classList.add('hidden');
+        }
+    });
+</script>
+</body></html>

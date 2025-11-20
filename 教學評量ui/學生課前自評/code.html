@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pre-Lesson Self-Assessment</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#3498db",
+            "background-light": "#f2f2f7",
+            "background-dark": "#101c22",
+            "accent": "#f1c40f",
+            "text-headings-light": "#333333",
+            "text-body-light": "#555555",
+            "text-headings-dark": "#f2f2f7",
+            "text-body-dark": "#d1d5db",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "Noto Sans TC", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .star-rating .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-gray-200 dark:border-gray-800">
+<button class="text-text-headings-light dark:text-text-headings-dark flex size-10 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-text-headings-light dark:text-text-headings-dark text-xl font-bold leading-tight tracking-tight flex-1 text-center">課前自評</h1>
+<div class="size-10"></div>
+</div>
+<div class="p-4 pb-20">
+<!-- Instruction Text -->
+<p class="text-text-body-light dark:text-text-body-dark text-base font-normal leading-normal pb-4 pt-1">請根據您目前的滑雪能力，為以下項目評分</p>
+<!-- Skill Assessment List -->
+<div class="space-y-4">
+<!-- Basic Skills Section -->
+<section>
+<h2 class="text-text-headings-light dark:text-text-headings-dark text-lg font-bold leading-tight tracking-tight px-1 pb-2 pt-4">基礎能力</h2>
+<div class="space-y-3">
+<!-- Skill Item Card: Straight Gliding -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-text-headings-light dark:text-text-headings-dark text-base font-medium leading-normal">直滑降</p>
+<p class="text-text-body-light dark:text-text-body-dark text-sm font-normal">Straight Gliding</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+</button>
+</div>
+<div class="star-rating flex items-center justify-start gap-2 mt-3">
+<span class="material-symbols-outlined text-accent text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-accent text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+</div>
+</div>
+<!-- Skill Item Card: Braking Wedge -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-text-headings-light dark:text-text-headings-dark text-base font-medium leading-normal">全制動</p>
+<p class="text-text-body-light dark:text-text-body-dark text-sm font-normal">Braking Wedge</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+</button>
+</div>
+<div class="star-rating flex items-center justify-start gap-2 mt-3">
+<span class="material-symbols-outlined text-accent text-3xl cursor-pointer filled">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+</div>
+</div>
+<!-- Skill Item Card: Wedge Turns with Comment -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-text-headings-light dark:text-text-headings-dark text-base font-medium leading-normal">犁式轉彎</p>
+<p class="text-text-body-light dark:text-text-body-dark text-sm font-normal">Wedge Turns</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined filled">chat_bubble</span>
+</button>
+</div>
+<div class="star-rating flex items-center justify-start gap-2 mt-3">
+<span class="material-symbols-outlined text-accent text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-accent text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-accent text-3xl cursor-pointer">star</span>
+</div>
+<div class="mt-4">
+<textarea class="w-full bg-background-light dark:bg-gray-700 text-text-body-light dark:text-text-body-dark rounded-lg border border-gray-300 dark:border-gray-600 p-2 focus:ring-primary focus:border-primary" placeholder="新增註解..." rows="3"></textarea>
+<div class="flex justify-end gap-2 mt-2">
+<button class="text-sm text-text-body-light dark:text-text-body-dark py-1 px-3 rounded-lg">取消</button>
+<button class="text-sm bg-primary text-white py-1 px-3 rounded-lg">儲存</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Advanced Techniques Section -->
+<section>
+<h2 class="text-text-headings-light dark:text-text-headings-dark text-lg font-bold leading-tight tracking-tight px-1 pb-2 pt-4">進階技巧</h2>
+<div class="space-y-3">
+<!-- Skill Item Card: S-Turns -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-text-headings-light dark:text-text-headings-dark text-base font-medium leading-normal">S型轉彎</p>
+<p class="text-text-body-light dark:text-text-body-dark text-sm font-normal">S-Turns</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+</button>
+</div>
+<div class="star-rating flex items-center justify-start gap-2 mt-3">
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+</div>
+</div>
+<!-- Skill Item Card: Pole Planting -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-text-headings-light dark:text-text-headings-dark text-base font-medium leading-normal">點杖</p>
+<p class="text-text-body-light dark:text-text-body-dark text-sm font-normal">Pole Planting</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+</button>
+</div>
+<div class="star-rating flex items-center justify-start gap-2 mt-3">
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+</div>
+</div>
+<!-- Skill Item Card: Carving -->
+<div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-4">
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-text-headings-light dark:text-text-headings-dark text-base font-medium leading-normal">Carving</p>
+<p class="text-text-body-light dark:text-text-body-dark text-sm font-normal">Carving</p>
+</div>
+<button class="text-primary">
+<span class="material-symbols-outlined">chat_bubble_outline</span>
+</button>
+</div>
+<div class="star-rating flex items-center justify-start gap-2 mt-3">
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+<span class="material-symbols-outlined text-gray-300 dark:text-gray-600 text-3xl cursor-pointer">star</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Sticky Footer with Action Buttons -->
+<div class="fixed bottom-0 left-0 right-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm p-4 border-t border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-4">
+<button class="flex-1 text-primary border border-primary rounded-full h-12 text-base font-bold">儲存草稿</button>
+<button class="flex-1 bg-primary text-white rounded-full h-12 text-base font-bold">完成並送出</button>
+</div>
+</div>
+</div>
+</body></html>

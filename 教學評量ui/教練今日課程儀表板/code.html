@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-TW"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>教練儀表板</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans TC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="flex items-center p-4 pb-2 justify-between bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center">
+</div>
+<h1 class="text-zinc-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">教練儀表板</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-zinc-900 dark:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined text-3xl">account_circle</span>
+</button>
+</div>
+</div>
+<h2 class="text-zinc-900 dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">今日課程</h2>
+<div class="flex flex-col gap-3 px-4 py-2">
+<a class="block cursor-pointer" href="#">
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-orange-500/20 text-orange-500 shrink-0 size-12">
+<span class="material-symbols-outlined text-3xl">snowboarding</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-zinc-900 dark:text-white text-base font-bold leading-normal line-clamp-1">09:00 - 10:30</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-normal leading-normal line-clamp-2">學生：王小明</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-2">
+<span class="text-orange-500 text-sm font-medium">待評量</span>
+<span class="material-symbols-outlined text-orange-500 text-xl">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</a>
+<a class="block cursor-pointer" href="#">
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-orange-500/20 text-orange-500 shrink-0 size-12">
+<span class="material-symbols-outlined text-3xl">downhill_skiing</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-zinc-900 dark:text-white text-base font-bold leading-normal line-clamp-1">11:00 - 12:30</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-normal leading-normal line-clamp-2">學生：陳美麗</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-2">
+<span class="text-orange-500 text-sm font-medium">待評量</span>
+<span class="material-symbols-outlined text-orange-500 text-xl">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</a>
+<a class="block cursor-pointer" href="#">
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-orange-500/20 text-orange-500 shrink-0 size-12">
+<span class="material-symbols-outlined text-3xl">snowboarding</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-zinc-900 dark:text-white text-base font-bold leading-normal line-clamp-1">14:00 - 15:30</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-normal leading-normal line-clamp-2">學生：李大文</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-2">
+<span class="text-orange-500 text-sm font-medium">待評量</span>
+<span class="material-symbols-outlined text-orange-500 text-xl">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</a>
+<a class="block cursor-pointer" href="#">
+<div class="flex items-center gap-4 rounded-xl bg-white dark:bg-zinc-800/50 p-4 min-h-[72px] justify-between shadow-sm">
+<div class="flex items-center gap-4">
+<div class="text-white flex items-center justify-center rounded-lg bg-zinc-500/20 text-zinc-500 dark:text-zinc-400 shrink-0 size-12">
+<span class="material-symbols-outlined text-3xl">downhill_skiing</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-zinc-900 dark:text-white text-base font-bold leading-normal line-clamp-1">16:00 - 17:30</p>
+<p class="text-zinc-500 dark:text-zinc-400 text-sm font-normal leading-normal line-clamp-2">學生：張三</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-2">
+<span class="text-zinc-500 dark:text-zinc-400 text-sm font-medium">已完成評量</span>
+</div>
+</div>
+</div>
+</a>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center p-8 text-center bg-background-light dark:bg-background-dark hidden">
+<span class="material-symbols-outlined text-6xl text-zinc-400 dark:text-zinc-500">beach_access</span>
+<p class="mt-4 text-lg font-bold text-zinc-700 dark:text-zinc-300">今日無課程安排</p>
+<p class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">好好休息吧！</p>
+</div>
+<div class="sticky bottom-0 left-0 right-0 h-20 bg-background-light dark:bg-background-dark border-t border-zinc-200 dark:border-zinc-800 mt-auto">
+<div class="grid h-full max-w-lg grid-cols-3 mx-auto font-medium">
+<button class="inline-flex flex-col items-center justify-center px-5 text-primary dark:text-primary" type="button">
+<span class="material-symbols-outlined text-2xl">dashboard</span>
+<span class="text-xs">儀表板</span>
+</button>
+<button class="inline-flex flex-col items-center justify-center px-5 text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary" type="button">
+<span class="material-symbols-outlined text-2xl">history</span>
+<span class="text-xs">紀錄</span>
+</button>
+<button class="inline-flex flex-col items-center justify-center px-5 text-zinc-500 dark:text-zinc-400 hover:text-primary dark:hover:text-primary" type="button">
+<span class="material-symbols-outlined text-2xl">group</span>
+<span class="text-xs">學生</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

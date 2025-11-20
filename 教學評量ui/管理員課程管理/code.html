@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3B82F6", // Sky Blue
+                        "secondary": "#0A2540", // Deep Blue
+                        "accent": "#F97316", // Bright Orange
+                        "success": "#10B981", // Green
+                        "warning": "#F59E0B", // Yellow/Orange
+                        "disabled": "#9CA3AF", // Gray
+                        "background-light": "#F5F7FA",
+                        "background-dark": "#0A2540",
+                        "card-light": "#FFFFFF",
+                        "card-dark": "#334155",
+                        "text-light-primary": "#0A2540",
+                        "text-light-secondary": "#334155",
+                        "text-dark-primary": "#FFFFFF",
+                        "text-dark-secondary": "#9CA3AF"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 shadow-sm">
+<button class="text-text-light-primary dark:text-text-dark-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-text-light-primary dark:text-text-dark-primary text-xl font-bold leading-tight tracking-[-0.015em] flex-1 text-center">課程管理</h1>
+<button class="text-text-light-primary dark:text-text-dark-primary flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/10 dark:hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">add_circle_outline</span>
+</button>
+</div>
+<div class="p-4 space-y-4 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full shadow-sm">
+<div class="text-text-light-secondary dark:text-text-dark-secondary flex border-none bg-card-light dark:bg-card-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-text-light-primary dark:text-text-dark-primary focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-card-light dark:bg-card-dark h-full placeholder:text-text-light-secondary dark:placeholder:text-text-dark-secondary px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="搜尋課程" value=""/>
+</div>
+</label>
+<div class="grid grid-cols-2 gap-3">
+<div class="relative">
+<select class="form-select w-full h-10 rounded-lg bg-card-light dark:bg-card-dark text-text-light-secondary dark:text-text-dark-secondary text-sm font-medium border-none shadow-sm appearance-none pl-4 pr-8">
+<option disabled="" selected="">時間範圍</option>
+<option>今天</option>
+<option>本週</option>
+<option>本月</option>
+<option>自訂日期範圍</option>
+</select>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">keyboard_arrow_down</span>
+</div>
+<div class="relative">
+<select class="form-select w-full h-10 rounded-lg bg-card-light dark:bg-card-dark text-text-light-secondary dark:text-text-dark-secondary text-sm font-medium border-none shadow-sm appearance-none pl-4 pr-8">
+<option disabled="" selected="">教練</option>
+<option>王大明</option>
+<option>陳小美</option>
+<option>李教練團隊</option>
+</select>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">keyboard_arrow_down</span>
+</div>
+<div class="relative">
+<select class="form-select w-full h-10 rounded-lg bg-card-light dark:bg-card-dark text-text-light-secondary dark:text-text-dark-secondary text-sm font-medium border-none shadow-sm appearance-none pl-4 pr-8">
+<option disabled="" selected="">雪場</option>
+<option>野澤溫泉</option>
+<option>苗場</option>
+<option>藏王溫泉</option>
+</select>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">keyboard_arrow_down</span>
+</div>
+<div class="relative">
+<select class="form-select w-full h-10 rounded-lg bg-card-light dark:bg-card-dark text-text-light-secondary dark:text-text-dark-secondary text-sm font-medium border-none shadow-sm appearance-none pl-4 pr-8">
+<option disabled="" selected="">課程狀態</option>
+<option>未評量</option>
+<option>已評量</option>
+</select>
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<div class="flex-1 p-4 space-y-4">
+<div class="p-4 @container bg-card-light dark:bg-card-dark rounded-xl shadow-md">
+<div class="flex flex-col items-stretch justify-start @xl:flex-row @xl:items-start">
+<div class="flex w-full flex-col items-stretch justify-center gap-2">
+<div class="flex justify-end items-start">
+<button class="text-text-light-secondary dark:text-text-dark-secondary -mr-2 -mt-2">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-text-light-secondary dark:text-text-dark-secondary text-sm">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<p>2024/12/25</p>
+</div>
+<div class="flex items-center gap-2 text-text-light-secondary dark:text-text-dark-secondary text-sm">
+<span class="material-symbols-outlined text-base">person</span>
+<p>教練：王大明</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">groups</span>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-medium">4 / 6</p>
+</div>
+<span class="inline-flex items-center rounded-md bg-warning/20 px-2.5 py-1 text-xs font-semibold text-warning ring-1 ring-inset ring-warning/20">未評量</span>
+</div>
+<button class="mt-4 flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal shadow-sm hover:bg-primary/90 transition-colors">
+<span class="truncate">管理席位</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-4 @container bg-card-light dark:bg-card-dark rounded-xl shadow-md">
+<div class="flex flex-col items-stretch justify-start @xl:flex-row @xl:items-start">
+<div class="flex w-full flex-col items-stretch justify-center gap-2">
+<div class="flex justify-end items-start">
+<button class="text-text-light-secondary dark:text-text-dark-secondary -mr-2 -mt-2">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-text-light-secondary dark:text-text-dark-secondary text-sm">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<p>2024/12/26</p>
+</div>
+<div class="flex items-center gap-2 text-text-light-secondary dark:text-text-dark-secondary text-sm">
+<span class="material-symbols-outlined text-base">person</span>
+<p>教練：陳小美</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">groups</span>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-medium">6 / 6</p>
+</div>
+<span class="inline-flex items-center rounded-md bg-success/20 px-2.5 py-1 text-xs font-semibold text-success ring-1 ring-inset ring-success/20">已評量</span>
+</div>
+<button class="mt-4 flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal shadow-sm hover:bg-primary/90 transition-colors">
+<span class="truncate">管理席位</span>
+</button>
+</div>
+</div>
+</div>
+<div class="p-4 @container bg-card-light dark:bg-card-dark rounded-xl shadow-md opacity-70">
+<div class="flex flex-col items-stretch justify-start @xl:flex-row @xl:items-start">
+<div class="flex w-full flex-col items-stretch justify-center gap-2">
+<div class="flex justify-end items-start">
+<button class="text-text-light-secondary dark:text-text-dark-secondary -mr-2 -mt-2">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex items-center gap-2 text-text-light-secondary dark:text-text-dark-secondary text-sm">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<p>2024/01/15</p>
+</div>
+<div class="flex items-center gap-2 text-text-light-secondary dark:text-text-dark-secondary text-sm">
+<span class="material-symbols-outlined text-base">person</span>
+<p>教練：李教練團隊</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-light-secondary dark:text-text-dark-secondary">groups</span>
+<p class="text-text-light-secondary dark:text-text-dark-secondary text-sm font-medium">6 / 6</p>
+</div>
+<span class="inline-flex items-center rounded-md bg-disabled/20 px-2.5 py-1 text-xs font-semibold text-disabled ring-1 ring-inset ring-disabled/20">已結束</span>
+</div>
+<button class="mt-4 flex w-full min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-disabled text-white text-sm font-medium leading-normal shadow-sm" disabled="">
+<span class="truncate">查看詳情</span>
+</button>
+</div>
+</div>
+</div>
+<div class="text-center py-16 px-4 hidden">
+<div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+<span class="material-symbols-outlined text-primary text-4xl">upcoming</span>
+</div>
+<h2 class="mt-6 text-xl font-bold text-text-light-primary dark:text-text-dark-primary">尚無課程</h2>
+<p class="mt-2 text-base text-text-light-secondary dark:text-text-dark-secondary">開始建立您的第一堂滑雪課程吧！</p>
+<button class="mt-8 flex mx-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-accent text-white text-base font-medium leading-normal shadow-lg hover:bg-accent/90 transition-colors">
+<span class="truncate">新增課程</span>
+</button>
+</div>
+</div>
+<div class="fixed bottom-6 right-6 z-20">
+<button class="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white shadow-xl hover:bg-accent/90 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-background-dark transition-transform duration-200 ease-in-out hover:scale-105">
+<span class="material-symbols-outlined text-4xl">add</span>
+</button>
+</div>
+</div>
+</body></html>

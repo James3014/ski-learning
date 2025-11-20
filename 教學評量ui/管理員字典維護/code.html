@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>滑雪教學評量系統</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3498DB",
+                        "background-light": "#F8F9FA",
+                        "background-dark": "#101c22",
+                        "secondary": "#7F8C8D",
+                        "destructive": "#E74C3C",
+                        "text-light": "#2C3E50",
+                        "text-dark": "#F8F9FA"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "Noto Sans TC", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between border-b border-gray-200 dark:border-gray-700">
+<div class="text-text-light dark:text-text-dark flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</div>
+<h1 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">資料維護</h1>
+<button class="flex items-center justify-end">
+<p class="text-secondary text-sm font-bold leading-normal tracking-[0.015em] shrink-0">變更記錄</p>
+</button>
+</div>
+<!-- Tabs -->
+<div class="pb-3 bg-background-light dark:bg-background-dark">
+<div class="flex border-b border-gray-200 dark:border-gray-700 px-4 gap-4 sm:gap-8 overflow-x-auto">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">能力清單</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-secondary pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">教學分析</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-secondary pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">練習項目</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-secondary pb-[13px] pt-4 whitespace-nowrap" href="#">
+<p class="text-sm font-bold leading-normal tracking-[0.015em]">雪場與雪道</p>
+</a>
+</div>
+</div>
+<!-- Search and Actions -->
+<div class="px-4 py-3 flex flex-col sm:flex-row gap-3 bg-background-light dark:bg-background-dark">
+<div class="flex-1">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-secondary flex border border-r-0 border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 items-center justify-center pl-4 rounded-l-lg">
+<span class="material-symbols-outlined text-2xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-text-light dark:text-text-dark focus:outline-0 focus:ring-2 focus:ring-primary/50 border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 h-full placeholder:text-secondary px-4 text-base font-normal leading-normal" placeholder="搜尋能力" value=""/>
+</div>
+</label>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary/20 text-primary gap-2 text-sm font-bold leading-normal tracking-[0.015em] border border-primary/50 hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined text-xl">upload_file</span>
+<span class="truncate">批次匯入</span>
+</button>
+</div>
+<!-- List Items -->
+<div class="flex-1 overflow-y-auto bg-background-light dark:bg-background-dark px-4 pb-24">
+<div class="flex items-center gap-4 min-h-[72px] py-3 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-700 shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">snowboarding</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal line-clamp-1">S-Turn</p>
+<p class="text-secondary text-sm font-normal leading-normal line-clamp-2">ID: SKI-001</p>
+</div>
+</div>
+<div class="shrink-0 flex gap-2">
+<button class="text-secondary flex size-9 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="text-destructive flex size-9 items-center justify-center rounded-full hover:bg-destructive/20 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 min-h-[72px] py-3 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-700 shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">snowboarding</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal line-clamp-1">C-Turn</p>
+<p class="text-secondary text-sm font-normal leading-normal line-clamp-2">ID: SKI-002</p>
+</div>
+</div>
+<div class="shrink-0 flex gap-2">
+<button class="text-secondary flex size-9 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="text-destructive flex size-9 items-center justify-center rounded-full hover:bg-destructive/20 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 min-h-[72px] py-3 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-700 shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">downhill_skiing</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal line-clamp-1">Carving</p>
+<p class="text-secondary text-sm font-normal leading-normal line-clamp-2">ID: SKI-003</p>
+</div>
+</div>
+<div class="shrink-0 flex gap-2">
+<button class="text-secondary flex size-9 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="text-destructive flex size-9 items-center justify-center rounded-full hover:bg-destructive/20 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<div class="flex items-center gap-4 min-h-[72px] py-3 border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-4 flex-1">
+<div class="text-text-light dark:text-text-dark flex items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-700 shrink-0 size-12">
+<span class="material-symbols-outlined text-2xl">ac_unit</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal line-clamp-1">Moguls</p>
+<p class="text-secondary text-sm font-normal leading-normal line-clamp-2">ID: SKI-004</p>
+</div>
+</div>
+<div class="shrink-0 flex gap-2">
+<button class="text-secondary flex size-9 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">edit</span>
+</button>
+<button class="text-destructive flex size-9 items-center justify-center rounded-full hover:bg-destructive/20 transition-colors">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</div>
+</div>
+<!-- Empty State Example -->
+<!-- 
+            <div class="text-center py-20">
+                <div class="text-secondary mx-auto flex size-16 items-center justify-center rounded-full bg-gray-200 dark:bg-gray-700">
+                    <span class="material-symbols-outlined text-4xl">inventory_2</span>
+                </div>
+                <h3 class="mt-4 text-lg font-medium text-text-light dark:text-text-dark">沒有能力項目</h3>
+                <p class="mt-1 text-sm text-secondary">開始新增一個新項目或匯入清單</p>
+            </div>
+            -->
+</div>
+<!-- Floating Action Button -->
+<div class="fixed bottom-6 right-6">
+<button class="flex items-center justify-center size-14 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>教學紀錄</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3498db",
+                        "background-light": "#ecf0f1",
+                        "background-dark": "#101c22",
+                        "accent": "#f1c40f",
+                        "text-light": "#2c3e50",
+                        "text-dark": "#ecf0f1",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col pb-20">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 shadow-sm">
+<div class="text-text-light dark:text-text-dark flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</div>
+<h1 class="text-text-light dark:text-text-dark text-xl font-bold leading-tight tracking-tight">教學紀錄</h1>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-transparent text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-2xl">swap_vert</span>
+</button>
+</div>
+</div>
+<div class="px-4 py-3 bg-background-light dark:bg-background-dark">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full shadow-sm">
+<div class="text-gray-400 dark:text-gray-500 flex bg-white dark:bg-[#2c3e50] items-center justify-center pl-4 rounded-l-lg border-y border-l border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-text-light dark:text-text-dark focus:outline-none focus:ring-2 focus:ring-primary/50 border-y border-r border-gray-200 dark:border-gray-700 bg-white dark:bg-[#2c3e50] h-full placeholder:text-gray-400 dark:placeholder:text-gray-500 px-4 text-base font-normal leading-normal" placeholder="搜尋學生姓名..."/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 px-4 py-2 bg-background-light dark:bg-background-dark overflow-x-auto">
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#2c3e50] pl-4 pr-3 shadow-sm border border-gray-200 dark:border-gray-700">
+<p class="text-text-light dark:text-text-dark text-sm font-medium">日期</p>
+<span class="material-symbols-outlined text-text-light dark:text-text-dark text-lg">arrow_drop_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-accent text-text-light pl-4 pr-3 shadow-sm">
+<p class="text-sm font-medium">雪場</p>
+<span class="material-symbols-outlined text-lg">arrow_drop_down</span>
+</button>
+<button class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-[#2c3e50] pl-4 pr-3 shadow-sm border border-gray-200 dark:border-gray-700">
+<p class="text-text-light dark:text-text-dark text-sm font-medium">課程</p>
+<span class="material-symbols-outlined text-text-light dark:text-text-dark text-lg">arrow_drop_down</span>
+</button>
+</div>
+<div class="flex-grow p-4 space-y-4">
+<div class="flex items-center gap-4 bg-white dark:bg-[#2c3e50] p-4 rounded-xl shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300">
+<div class="flex items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/30 shrink-0 size-14 text-primary">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-lg font-bold">2023/12/20</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm">苗場滑雪場 - 小明 - 單板滑雪 - 2小時</p>
+</div>
+<div class="shrink-0 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-[#2c3e50] p-4 rounded-xl shadow-md cursor-pointer hover:shadow-lg transition-shadow duration-300">
+<div class="flex items-center justify-center rounded-lg bg-primary/20 dark:bg-primary/30 shrink-0 size-14 text-primary">
+<span class="material-symbols-outlined text-3xl">calendar_month</span>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<p class="text-text-light dark:text-text-dark text-lg font-bold">2023/12/18</p>
+<p class="text-gray-500 dark:text-gray-400 text-sm">藏王溫泉滑雪場 - 小華 - 雙板滑雪 - 3小時</p>
+</div>
+<div class="shrink-0 text-gray-400 dark:text-gray-500">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center text-center py-20 px-6">
+<div class="flex items-center justify-center rounded-full bg-primary/10 size-24 text-primary mb-6">
+<span class="material-symbols-outlined text-6xl">search_off</span>
+</div>
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark mb-2">找不到教學紀錄</h2>
+<p class="text-gray-500 dark:text-gray-400 max-w-xs">試試看調整篩選條件，或新增一筆新的教學紀錄吧！</p>
+</div>
+</div>
+<button class="fixed bottom-24 right-6 flex items-center justify-center w-14 h-14 rounded-full bg-primary text-white shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-4 focus:ring-primary/50 transition-transform duration-300 transform hover:scale-105 z-20">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+<div class="fixed bottom-0 left-0 w-full bg-white dark:bg-[#2c3e50] shadow-[0_-1px_4px_rgba(0,0,0,0.1)] dark:shadow-[0_-1px_4px_rgba(0,0,0,0.5)] z-30">
+<div class="flex justify-around h-16">
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 w-full" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-xs">儀表板</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-accent w-full" href="#">
+<span class="material-symbols-outlined">history</span>
+<span class="text-xs font-bold">紀錄</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400 w-full" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="text-xs">學生</span>
+</a>
+</div>
+</div>
+</div>
+</body></html>

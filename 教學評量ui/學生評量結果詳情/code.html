@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Evaluation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-black dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h2 class="text-black dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">課程評量</h2>
+<div class="flex w-12 items-center justify-end">
+</div>
+</div>
+<div class="flex p-4 @container">
+<div class="flex w-full flex-col gap-4 @[520px]:flex-row @[520px]:justify-between @[520px]:items-center">
+<div class="flex gap-4 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-20 w-20" data-alt="Student's profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDa8DFkR-lQJJfbd-fpvMI1XEX9EKbYKa61oboAgN5VEVlcJfb9nvDu90OVcMG_yGA7BItHjO0UnaNsEAyupbYdd8D42RVMMjD_srwtyRKkVln-zQZPOVrgMJobRF9AqS46DZDmuz3_zxQBnZAUDa926zHZJEd2DWvr6PZ86UXpg7u_Psgne4_s0zRh0F4uWs8La2kvS3W27EbRuQfFLOSHTedfi0Lx5ubme2Z1807zsVlQA4zI8HT5Zy5DRJ5WGnso3wOxRRFzVwGq");'></div>
+<div class="flex flex-col justify-center">
+<p class="text-black dark:text-white text-[22px] font-bold leading-tight tracking-[-0.015em]">陳學生</p>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">2023年12月25日</p>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4">
+<h1 class="text-black dark:text-white tracking-light text-[32px] font-bold leading-tight pb-3 pt-4">教練評語</h1>
+</div>
+<div class="flex flex-wrap gap-x-8 gap-y-6 p-4">
+<div class="flex flex-col gap-2">
+<p class="text-primary text-5xl font-black leading-tight tracking-[-0.033em]">4.0</p>
+<div class="flex gap-0.5">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-2xl">star</span>
+</div>
+<p class="text-gray-600 dark:text-gray-300 text-base font-normal leading-normal">1 教練</p>
+</div>
+</div>
+<p class="text-black dark:text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
+      今天的表現非常出色！轉彎技巧有顯著進步，但在高速時仍需注意保持平衡。建議多加練習，相信很快就能掌握。
+    </p>
+<div class="px-4 pt-8 pb-4">
+<h2 class="text-black dark:text-white text-2xl font-bold">能力對比</h2>
+</div>
+<div class="px-4 space-y-4">
+<div class="bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg">
+<p class="text-black dark:text-white font-semibold mb-2">轉彎</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<p class="text-sm text-gray-600 dark:text-gray-400">課前自評</p>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 text-xl">star</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 text-xl">star</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-sm text-gray-600 dark:text-gray-400">教練評分</p>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 text-xl">star</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-100 dark:bg-gray-800/50 p-4 rounded-lg">
+<p class="text-black dark:text-white font-semibold mb-2">停止</p>
+<div class="space-y-2">
+<div class="flex items-center justify-between">
+<p class="text-sm text-gray-600 dark:text-gray-400">課前自評</p>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500 text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-600 text-xl">star</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<p class="text-sm text-gray-600 dark:text-gray-400">教練評分</p>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="px-4 pt-8 pb-4">
+<h2 class="text-black dark:text-white text-2xl font-bold">教學影片建議</h2>
+</div>
+<div class="px-4 space-y-4">
+<div class="relative rounded-lg overflow-hidden aspect-video">
+<img class="w-full h-full object-cover" data-alt="A skier making a sharp turn on a snowy slope." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsq-AQ-zE7jMaj1kSVCyr9iIlLg8VmXd01KXzoUsg_gcP4iisOwva-ttIFPqjOJm5M6VV0zoUFZcMCQWYQdWsaaWhEUxX2g4BUaqpWTbQSwdffkt1vvyxZ2BkzUpaC0BAFrnQH2CRIrseoGWguVf5QozSIJTnHipJCsSnwCTCYQo3I63hvBw_wYbc_fsn95aj-uRsW4Ue_23FtWpNMlTw5xadEI-JeqZuF4N0rLWMAByhGoZ942uUIGP3pR2iCwK6lNNp1n2e2Riec"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<button class="bg-white/30 backdrop-blur-sm rounded-full p-4 text-white">
+<span class="material-symbols-outlined text-4xl">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 p-4">
+<p class="text-white font-bold">如何正確轉彎</p>
+</div>
+</div>
+</div>
+<div class="p-4 mt-8 pb-8">
+<button class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors">
+        我已閱讀
+      </button>
+</div>
+</div>
+</body></html>

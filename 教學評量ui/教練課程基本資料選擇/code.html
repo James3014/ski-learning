@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-TW"><head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>選擇課程資料</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3498db",
+                        "background-light": "#F7F9FC",
+                        "background-dark": "#101c22",
+                        "text-light": "#333333",
+                        "text-dark": "#F7F9FC"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .form-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%2724px%27 height=%2724px%27 fill=%27rgb(157,176,185)%27 viewBox=%270 0 256 256%27%3e%3cpath d=%27M181.66,170.34a8,8,0,0,1,0,11.32l-48,48a8,8,0,0,1-11.32,0l-48-48a8,8,0,0,1,11.32-11.32L128,212.69l42.34-42.35A8,8,0,0,1,181.66,170.34Zm-96-84.68L128,43.31l42.34,42.35a8,8,0,0,0,11.32-11.32l-48-48a8,8,0,0,0-11.32,0l-48-48A8,8,0,0,0,85.66,85.66Z%27%3e%3c/path%3e%3c/svg%3e');
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+        }
+        .form-input-dark {
+            border-color: #3b4b54;
+            background-color: #1c2327;
+            color: #F7F9FC;
+        }
+        .form-input-dark:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: none;
+        }
+        .form-input-light {
+            border-color: #e0e6f0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        .form-input-light:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<div class="flex items-center p-4 pb-2 justify-between bg-background-light dark:bg-background-dark sticky top-0 z-10">
+<button class="text-text-light dark:text-text-dark flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">教練課程基本資料選擇</h1>
+<div class="size-12"></div>
+</div>
+<main class="flex-1 flex flex-col p-4 space-y-6">
+<div class="flex flex-col">
+<label class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2" for="order-number">訂單編號</label>
+<div class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg h-14 p-4 text-base font-normal leading-normal form-input-light dark:form-input-dark bg-gray-100 dark:bg-gray-800 flex items-center text-gray-500 dark:text-gray-400">
+<span>#20231027-001</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2" for="lesson-date">課程日期</label>
+<div class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg h-14 p-4 text-base font-normal leading-normal form-input-light dark:form-input-dark bg-gray-100 dark:bg-gray-800 flex items-center text-gray-500 dark:text-gray-400">
+<span>2023-10-27</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2" for="ski-resort">雪場</label>
+<div class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg h-14 p-4 text-base font-normal leading-normal form-input-light dark:form-input-dark bg-gray-100 dark:bg-gray-800 flex items-center text-gray-500 dark:text-gray-400">
+<span>雪場A</span>
+</div>
+</div>
+<div class="flex flex-col">
+<label class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2" for="ski-trail">雪道 <span class="text-primary">*</span></label>
+<select class="form-select w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg focus:ring-0 h-14 placeholder:text-gray-400 p-4 text-base font-normal leading-normal form-input-light dark:form-input-dark" id="ski-trail">
+<option disabled="" selected="" value="">請選擇雪道</option>
+<optgroup label="Beginner">
+<option value="green1">綠線 - 森林步道</option>
+<option value="green2">綠線 - 陽光大道</option>
+</optgroup>
+<optgroup label="Intermediate">
+<option value="blue1">藍線 - 冰川快道</option>
+<option value="blue2">藍線 - 峽谷</option>
+</optgroup>
+<optgroup label="Advanced">
+<option value="black1">黑線 - 挑戰者</option>
+</optgroup>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2" for="snow-condition">雪況 <span class="text-primary">*</span></label>
+<select class="form-select w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg focus:ring-0 h-14 placeholder:text-gray-400 p-4 text-base font-normal leading-normal form-input-light dark:form-input-dark" id="snow-condition">
+<option disabled="" selected="" value="">請記錄雪況</option>
+<option value="powder">鬆雪 (Powder)</option>
+<option value="groomed">壓實雪 (Groomed)</option>
+<option value="icy">冰面 (Icy)</option>
+<option value="slushy">思樂冰 (Slushy)</option>
+</select>
+</div>
+<div class="flex flex-col">
+<label class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2" for="student">選擇學生以開始評量 <span class="text-primary">*</span></label>
+<div class="rounded-lg bg-white dark:bg-gray-800 divide-y divide-gray-100 dark:divide-gray-700">
+<a class="flex items-center justify-between p-4 rounded-t-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer" href="#">
+<div class="flex items-center space-x-3 flex-1">
+<img alt="Student A" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjPP1KEOrPU3wj4t9K_EaCHiK_JBvpeiIRkpIGZSWuu6gPfXdtdpnoQzbUHorTGRi9qD6i-H6IDuY2vwgRZJCzCafwQ3jL0DzscQjcrI-8yx0A4ks0NPUVQ-NNX6GbfKLA612TEir7LBvOnINe7ZjQhip5JV29Kwd6zyPtoZoAy4LeFUJWEp8T9vNtv7pf6qSXyJ-hC-AjtSY0FUchkxzVFLqCEG-aZwPw1eWTiBBBgfia-ykWUSSGtsAYgQktjAlQfMNAqRSU4TYG"/>
+<div class="flex-1">
+<p class="font-semibold text-text-light dark:text-text-dark">學生A</p>
+<div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mt-1 flex-wrap gap-y-1">
+<span class="inline-block rounded-full bg-gray-200 dark:bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">兒童</span>
+<span class="inline-block rounded-full bg-teal-100 dark:bg-teal-900/40 px-2.5 py-0.5 text-xs font-medium text-teal-700 dark:text-teal-300">Doer</span>
+<span class="inline-block rounded-full bg-indigo-100 dark:bg-indigo-900/40 px-2.5 py-0.5 text-xs font-medium text-indigo-700 dark:text-indigo-300">Thinker</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer" href="#">
+<div class="flex items-center space-x-3 flex-1">
+<img alt="Student B" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsYdD9goNdoPiN1toZ40etAtoct5tXdJmYN4O6Znwe_H1hMDw2yH23sKiDF8kfHGfhO-EHGJS0Js1HsGfrSge-0puCQFUlaFcySVRZzVuAMiMaD0Z5AqBDdePTm6_LTbelIKzWcvsCnSbH5JHusEhE6ptJOzu-Sx-ivthpVZaSRkczHuZTkmMe8O0Drzw91UuMnZuw3i0d9-QXerXOht0JRVFZDQ_4qLee4tpfaxKxz9qca7MwgJlLRCE80pog5i8YDLkOJ86I4gin"/>
+<div class="flex-1">
+<p class="font-semibold text-text-light dark:text-text-dark">學生B</p>
+<div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mt-1 flex-wrap gap-y-1">
+<span class="inline-block rounded-full bg-gray-200 dark:bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">成人</span>
+<span class="inline-block rounded-full bg-indigo-100 dark:bg-indigo-900/40 px-2.5 py-0.5 text-xs font-medium text-indigo-700 dark:text-indigo-300">Thinker</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-4 rounded-b-lg hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer" href="#">
+<div class="flex items-center space-x-3 flex-1">
+<img alt="Student C" class="h-12 w-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIcCjgc--5IE4X12yIr7e0gpd2s8zgYF_Uc_FUm8wzdGaMCpEdLBJ0qmBeuDMJ46weEJj9gEFuT-3KF8oRlzNPaliuBbzRviVfeq7-AEPeAb_uGaWqGPyVFb-JguIk-OVowwvCGlDP98HWzop4-jd-KmJOZh-Wboaj4NaCSqQ_PRFEs6uxUhun6AxOXaQUia2Q1Pl-TT1SowowxxihM8EnJayxcC5eUSQ3way6nIIhFBmF5Zgk0qz44AwEJh11w6LMoD0tRUMN2aPA"/>
+<div class="flex-1">
+<p class="font-semibold text-text-light dark:text-text-dark">學生C</p>
+<div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400 mt-1 flex-wrap gap-y-1">
+<span class="inline-block rounded-full bg-gray-200 dark:bg-gray-700 px-2.5 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">兒童</span>
+<span class="inline-block rounded-full bg-amber-100 dark:bg-amber-900/40 px-2.5 py-0.5 text-xs font-medium text-amber-700 dark:text-amber-300">Watcher</span>
+</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500">chevron_right</span>
+</a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

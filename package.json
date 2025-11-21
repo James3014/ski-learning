@@ -5,9 +5,13 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "start": "turbo run start",
+    "start": "node index.js",
+    "start:monorepo": "turbo run start",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   },
   "devDependencies": {
     "turbo": "latest",

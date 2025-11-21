@@ -1,60 +1,38 @@
-# DIY Ski Assessment System (滑雪教學評量系統)
+# Ski Teaching Assessment System API
 
-This is a Monorepo managed by [Turbo](https://turbo.build/) and [pnpm](https://pnpm.io/).
+簡化版單一 Repository 結構,專為 Zeabur 部署優化。
 
-## Tech Stack
+## 技術棧
+- **框架**: NestJS
+- **資料庫**: PostgreSQL + Prisma ORM
+- **語言**: TypeScript
+- **部署**: Zeabur
 
-- **Package Manager**: pnpm
-- **Monorepo Tool**: Turborepo
-- **Database**: PostgreSQL + Prisma (located in `packages/database`)
-- **Backend**: NestJS (located in `apps/api`)
-- **Frontend**: Next.js (located in `apps/web`)
+## 本地開發
+```bash
+# 安裝依賴
+npm install
 
-## Directory Structure
+# 生成 Prisma Client
+npm run db:generate
 
-```
-.
-├── apps
-│   ├── api          # NestJS Backend Service
-│   └── web          # Next.js Frontend Application
-├── packages
-│   └── database     # Shared Prisma Client & Schema
-├── docker-compose.yml # Local development infrastructure
-└── pnpm-workspace.yaml
+# 開發模式
+npm run start:dev
 ```
 
-## Deployment (Zeabur)
+## Zeabur 部署
+1. 連接此 Repository 的 `zeabur-simple-structure` 分支
+2. Build Command: `npm run build`
+3. Start Command: `npm run start:prod`
+4. 環境變數: `DATABASE_URL`
 
-### API Service (`apps/api`)
-- **Type**: Docker
-- **Dockerfile**: `apps/api/Dockerfile`
-- **Environment Variables**:
-  - `DATABASE_URL`: PostgreSQL connection string
+## 專案結構
+```
+├── src/              # NestJS 源碼
+├── prisma/           # 資料庫 Schema
+├── dist/             # Build 輸出 (gitignored)
+├── package.json      # Dependencies
+└── tsconfig.json     # TypeScript 配置
+```
 
-### Web Service (`apps/web`)
-- **Type**: Next.js
-- **Build Command**: `pnpm build` (handled by Zeabur's Next.js preset)
-- **Environment Variables**:
-  - `NEXT_PUBLIC_API_URL`: URL of the API service
-
-## Local Development
-
-1. Install dependencies:
-   ```bash
-   pnpm install
-   ```
-
-2. Start infrastructure (Postgres + Redis):
-   ```bash
-   docker-compose up -d
-   ```
-
-3. Generate Prisma Client:
-   ```bash
-   pnpm db:generate
-   ```
-
-4. Start development server:
-   ```bash
-   pnpm dev
-   ```
+部署成功後即可繼續專案開發。

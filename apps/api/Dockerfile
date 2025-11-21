@@ -38,7 +38,6 @@ USER nestjs
 
 COPY --from=installer --chown=nestjs:nodejs /app/apps/api/dist ./dist
 COPY --from=installer --chown=nestjs:nodejs /app/node_modules ./node_modules
-COPY --from=installer --chown=nestjs:nodejs /app/packages/database/node_modules/.prisma ./node_modules/.prisma
 
 EXPOSE 3001
 

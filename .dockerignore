@@ -1,9 +1,6 @@
 node_modules
-dist
-build
 .git
 .DS_Store
-.turbo
-.vercel
-.next
+.env*.local
 *.log
+.turbo/cache

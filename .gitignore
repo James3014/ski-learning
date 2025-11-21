@@ -1,8 +1,8 @@
 node_modules
-.DS_Store
 dist
-.turbo
 .env
-.vercel
-.next
-build
+.env.local
+*.log
+.DS_Store
+.turbo
+pnpm-lock.yaml

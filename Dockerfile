@@ -1,9 +1,9 @@
-FROM node:18-alpine
+FROM node:18-slim
 
 WORKDIR /app
 
 # 安裝 OpenSSL 3
-RUN apk add --no-cache openssl
+RUN apt-get update && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
 
 # 複製 package files
 COPY package*.json ./

@@ -2,5 +2,6 @@
     "build_command": "npm install && npm run build",
     "start_command": "npm run start:prod",
     "install_command": "npm install",
-    "node_version": "18"
+    "node_version": "18",
+    "base_image": "node:18-slim"
 }

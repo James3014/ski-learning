@@ -9,6 +9,7 @@
     "start:dev": "nest start --watch",
     "start:prod": "nest start",
     "migrate": "prisma migrate deploy",
+    "seed": "ts-node prisma/seed.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",

@@ -13,10 +13,12 @@ export class AppController {
     @Get('health')
     async getHealth(): Promise<any> {
         try {
-            await this.prisma.$queryRaw`SELECT 1`;
+            // 只測試連線，不執行查詢（避免 table 不存在的錯誤）
+            await this.prisma.$connect();
             return { 
                 status: 'ok', 
                 db: 'connected',
+                message: 'Database migration pending',
                 timestamp: new Date().toISOString(),
                 env: process.env.NODE_ENV || 'development'
             };

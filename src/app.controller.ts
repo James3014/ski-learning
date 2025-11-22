@@ -1,9 +1,9 @@
 import { Controller, Get } from '@nestjs/common';
-import { PrismaClient } from '@prisma/client';
+import { PrismaService } from './prisma.service';
 
 @Controller()
 export class AppController {
-    private prisma = new PrismaClient();
+    constructor(private prisma: PrismaService) {}
 
     @Get()
     getHello(): string {
@@ -13,7 +13,7 @@ export class AppController {
     @Get('health')
     async getHealth(): Promise<any> {
         try {
-            await this.prisma.$connect();
+            await this.prisma.$queryRaw`SELECT 1`;
             return { 
                 status: 'ok', 
                 db: 'connected',

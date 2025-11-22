@@ -2,6 +2,9 @@ FROM node:18-alpine
 
 WORKDIR /app
 
+# 安裝 OpenSSL 3
+RUN apk add --no-cache openssl
+
 # 複製 package files
 COPY package*.json ./
 COPY prisma ./prisma/

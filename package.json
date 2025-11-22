@@ -6,9 +6,9 @@
   "scripts": {
     "postinstall": "prisma generate",
     "build": "prisma generate && nest build",
-    "start": "node dist/main",
+    "start": "nest start",
     "start:dev": "nest start --watch",
-    "start:prod": "node dist/main.js",
+    "start:prod": "nest start",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -37,7 +37,9 @@
     "@types/supertest": "^6.0.3",
     "jest": "^30.2.0",
     "supertest": "^7.1.4",
-    "ts-jest": "^29.4.5"
+    "ts-jest": "^29.4.5",
+    "ts-loader": "^9.5.4",
+    "webpack": "^5.103.0"
   },
   "engines": {
     "node": ">=18.0.0"

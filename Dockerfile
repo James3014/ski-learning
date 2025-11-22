@@ -1,9 +1,9 @@
-FROM node:18-slim
+FROM node:18-alpine
 
 WORKDIR /app
 
-# 安裝 OpenSSL 3
-RUN apt-get update && apt-get install -y openssl libssl3 && rm -rf /var/lib/apt/lists/*
+# 安裝 OpenSSL 3 和其他必要套件
+RUN apk add --no-cache openssl openssl-dev
 
 # 複製 package files
 COPY package*.json ./

@@ -14,9 +14,20 @@ export class AppController {
     async getHealth(): Promise<any> {
         try {
             await this.prisma.$connect();
-            return { status: 'ok', db: 'connected' };
+            await this.prisma.$disconnect();
+            return { 
+                status: 'ok', 
+                db: 'connected',
+                timestamp: new Date().toISOString(),
+                env: process.env.NODE_ENV || 'development'
+            };
         } catch (error) {
-            return { status: 'error', db: 'disconnected', error: error.message };
+            return { 
+                status: 'error', 
+                db: 'disconnected', 
+                error: error.message,
+                timestamp: new Date().toISOString()
+            };
         }
     }
 }

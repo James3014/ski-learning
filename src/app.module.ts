@@ -3,6 +3,8 @@ import { AppController } from './app.controller';
 import { AbilitiesController } from './abilities/abilities.controller';
 import { SeatsController } from './seats/seats.controller';
 import { DatabaseModule } from './database/database.module';
+import { AbilitiesService } from './abilities/abilities.service';
+import { SeatsService } from './seats/seats.service';
 
 @Module({
   imports: [DatabaseModule],
@@ -10,6 +12,10 @@ import { DatabaseModule } from './database/database.module';
     AppController,
     AbilitiesController,
     SeatsController,
+  ],
+  providers: [
+    AbilitiesService,
+    SeatsService,
   ],
 })
 export class AppModule {}

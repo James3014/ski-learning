@@ -16,7 +16,7 @@ import { AbilityCatalog } from './entities/ability-catalog.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL,
+      url: process.env.DIRECT_URL || process.env.DATABASE_URL,
       entities: [
         Resort,
         Instructor,

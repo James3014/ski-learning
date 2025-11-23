@@ -1,12 +1,12 @@
-import { IsOptional, IsEnum, IsNumberString } from 'class-validator';
-import { SportType } from '@prisma/client';
+import { IsOptional, IsString, IsIn } from 'class-validator';
 
 export class GetAbilitiesQueryDto {
   @IsOptional()
-  @IsEnum(SportType)
-  sportType?: SportType;
+  @IsString()
+  @IsIn(['ski', 'snowboard'])
+  sportType?: string;
 
   @IsOptional()
-  @IsNumberString()
+  @IsString()
   skillLevel?: string;
 }

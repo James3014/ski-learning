@@ -1,29 +1,35 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { PrismaService } from '../database/prisma.service';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { AbilityCatalog, SportType } from '../database/entities/ability-catalog.entity';
 import { GetAbilitiesQueryDto } from './abilities.dto';
 
 @Controller('abilities')
 export class AbilitiesController {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    @InjectRepository(AbilityCatalog)
+    private abilityRepo: Repository<AbilityCatalog>,
+  ) {}
 
   @Get()
   async getAbilities(@Query() query: GetAbilitiesQueryDto) {
     const where: any = {};
-    
+
     if (query.sportType) {
-      where.sportType = query.sportType;
+      where.sportType = query.sportType as SportType;
     }
-    
+
     if (query.skillLevel) {
       where.skillLevel = parseInt(query.skillLevel);
     }
 
-    const abilities = await this.prisma.abilityCatalog.findMany({
+    const abilities = await this.abilityRepo.find({
       where,
-      orderBy: [
-        { skillLevel: 'asc' },
-        { sequenceInLevel: 'asc' },
-      ],
+      order: {
+        sportType: 'ASC',
+        skillLevel: 'ASC',
+        sequenceInLevel: 'ASC',
+      },
     });
 
     return {

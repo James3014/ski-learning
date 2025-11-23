@@ -12,6 +12,10 @@ export class SubmitIdentityDto {
   @IsString()
   studentDisplayName: string;
 
+  @IsString()
+  @IsOptional()
+  studentEnglishName?: string;
+
   @IsDateString()
   birthDate: string;
 

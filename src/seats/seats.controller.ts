@@ -1,25 +1,39 @@
 import { Controller, Get, Post, Body, Param, HttpException, HttpStatus } from '@nestjs/common';
-import { PrismaService } from '../database/prisma.service';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository, DataSource } from 'typeorm';
+import { SeatInvitation } from '../database/entities/seat-invitation.entity';
+import { OrderSeat } from '../database/entities/order-seat.entity';
+import { GlobalStudent } from '../database/entities/global-student.entity';
+import { StudentMapping } from '../database/entities/student-mapping.entity';
+import { SeatIdentityForm } from '../database/entities/seat-identity-form.entity';
 import { ClaimSeatDto, SubmitIdentityDto } from './seats.dto';
 import { ERROR_MESSAGES } from '../common/constants';
 
 @Controller('seats')
 export class SeatsController {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    @InjectRepository(SeatInvitation)
+    private invitationRepo: Repository<SeatInvitation>,
+    @InjectRepository(OrderSeat)
+    private seatRepo: Repository<OrderSeat>,
+    @InjectRepository(GlobalStudent)
+    private studentRepo: Repository<GlobalStudent>,
+    @InjectRepository(StudentMapping)
+    private mappingRepo: Repository<StudentMapping>,
+    @InjectRepository(SeatIdentityForm)
+    private formRepo: Repository<SeatIdentityForm>,
+    private dataSource: DataSource,
+  ) {}
 
   @Get(':code')
   async getSeatByCode(@Param('code') code: string) {
-    const invitation = await this.prisma.seatInvitation.findUnique({
+    const invitation = await this.invitationRepo.findOne({
       where: { code },
-      include: {
+      relations: {
         seat: {
-          include: {
-            lesson: {
-              include: {
-                resort: true,
-                instructor: true,
-              },
-            },
+          lesson: {
+            resort: true,
+            instructor: true,
           },
         },
       },
@@ -29,35 +43,33 @@ export class SeatsController {
       throw new HttpException(ERROR_MESSAGES.INVITATION_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 
-    if (new Date() > invitation.expiresAt) {
-      throw new HttpException(ERROR_MESSAGES.INVITATION_EXPIRED, HttpStatus.BAD_REQUEST);
-    }
-
     return {
       code: invitation.code,
+      expiresAt: invitation.expiresAt,
       seat: {
         id: invitation.seat.id,
         seatNumber: invitation.seat.seatNumber,
         status: invitation.seat.status,
+        lesson: {
+          id: invitation.seat.lesson.id,
+          date: invitation.seat.lesson.date,
+          resort: {
+            id: invitation.seat.lesson.resort.id,
+            name: invitation.seat.lesson.resort.name,
+            location: invitation.seat.lesson.resort.location,
+          },
+        },
       },
-      lesson: {
-        id: invitation.seat.lesson.id,
-        date: invitation.seat.lesson.date,
-        resort: invitation.seat.lesson.resort.name,
-      },
-      expiresAt: invitation.expiresAt,
     };
   }
 
   @Post('claim')
   async claimSeat(@Body() dto: ClaimSeatDto) {
-    const invitation = await this.prisma.seatInvitation.findUnique({
+    const invitation = await this.invitationRepo.findOne({
       where: { code: dto.code },
-      include: { 
+      relations: {
         seat: {
-          include: {
-            lesson: true,
-          },
+          lesson: true,
         },
       },
     });
@@ -67,63 +79,68 @@ export class SeatsController {
     }
 
     if (invitation.claimedAt) {
-      throw new HttpException(ERROR_MESSAGES.SEAT_ALREADY_CLAIMED, HttpStatus.BAD_REQUEST);
+      throw new HttpException(ERROR_MESSAGES.SEAT_ALREADY_CLAIMED, HttpStatus.CONFLICT);
     }
 
     if (new Date() > invitation.expiresAt) {
-      throw new HttpException(ERROR_MESSAGES.INVITATION_EXPIRED, HttpStatus.BAD_REQUEST);
+      throw new HttpException(ERROR_MESSAGES.INVITATION_EXPIRED, HttpStatus.GONE);
     }
 
-    return await this.prisma.$transaction(async (tx) => {
-      let student = await tx.globalStudent.findFirst({
+    return await this.dataSource.transaction(async (manager) => {
+      let student = await manager.findOne(GlobalStudent, {
         where: { email: dto.studentEmail },
       });
 
       if (!student) {
-        student = await tx.globalStudent.create({
-          data: {
-            email: dto.studentEmail,
-            phone: '',
-            birthDate: new Date(),
-          },
+        student = manager.create(GlobalStudent, {
+          id: `student-${Date.now()}`,
+          email: dto.studentEmail,
+          phone: '',
+          birthDate: new Date(),
         });
+        await manager.save(student);
       }
 
-      const mapping = await tx.studentMapping.create({
-        data: {
+      const resortId = invitation.seat.lesson.resortId;
+
+      let mapping = await manager.findOne(StudentMapping, {
+        where: {
           globalStudentId: student.id,
-          resortId: invitation.seat.lesson.resortId,
+          resortId: resortId,
         },
       });
 
-      await tx.orderSeat.update({
-        where: { id: invitation.seatId },
-        data: {
-          status: 'claimed',
-          claimedMappingId: mapping.id,
-          claimedAt: new Date(),
-        },
+      if (!mapping) {
+        mapping = manager.create(StudentMapping, {
+          id: `mapping-${Date.now()}`,
+          globalStudentId: student.id,
+          resortId: resortId,
+        });
+        await manager.save(mapping);
+      }
+
+      await manager.update(OrderSeat, invitation.seatId, {
+        claimedMappingId: mapping.id,
+        status: 'claimed' as any,
+        claimedAt: new Date(),
       });
 
-      await tx.seatInvitation.update({
-        where: { code: dto.code },
-        data: {
-          claimedAt: new Date(),
-          claimedBy: mapping.id,
-        },
+      await manager.update(SeatInvitation, dto.code, {
+        claimedAt: new Date(),
+        claimedBy: dto.studentEmail,
       });
 
       return {
-        message: '席位認領成功',
+        success: true,
         seatId: invitation.seatId,
-        studentId: student.id,
+        message: 'Seat claimed successfully',
       };
     });
   }
 
   @Post(':id/identity')
   async submitIdentity(@Param('id') seatId: string, @Body() dto: SubmitIdentityDto) {
-    const seat = await this.prisma.orderSeat.findUnique({
+    const seat = await this.seatRepo.findOne({
       where: { id: seatId },
     });
 
@@ -131,26 +148,29 @@ export class SeatsController {
       throw new HttpException(ERROR_MESSAGES.SEAT_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 
-    const form = await this.prisma.seatIdentityForm.create({
-      data: {
+    const form = await this.formRepo.save(
+      this.formRepo.create({
+        id: `form-${Date.now()}`,
         seatId,
-        status: 'submitted',
+        status: 'submitted' as any,
         studentDisplayName: dto.studentDisplayName,
+        studentEnglishName: dto.studentEnglishName,
         birthDate: new Date(dto.birthDate),
         contactEmail: dto.contactEmail,
+        guardianEmail: dto.guardianEmail,
         contactPhone: dto.contactPhone,
         isMinor: dto.isMinor,
-        guardianEmail: dto.guardianEmail,
         hasExternalInsurance: dto.hasExternalInsurance,
         insuranceProvider: dto.insuranceProvider,
         note: dto.note,
         submittedAt: new Date(),
-      },
-    });
+      }),
+    );
 
     return {
-      message: '身份表單提交成功',
+      success: true,
       formId: form.id,
+      message: 'Identity form submitted successfully',
     };
   }
 }

@@ -1,5 +1,3 @@
-export const DEFAULT_RESORT_ID = 1;
-
 export const ERROR_MESSAGES = {
   INVITATION_NOT_FOUND: '邀請碼不存在',
   INVITATION_EXPIRED: '邀請碼已過期',

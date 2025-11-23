@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, HttpException, HttpStatus } from '@nestjs/common';
 import { PrismaService } from '../database/prisma.service';
 import { ClaimSeatDto, SubmitIdentityDto } from './seats.dto';
-import { DEFAULT_RESORT_ID, ERROR_MESSAGES } from '../common/constants';
+import { ERROR_MESSAGES } from '../common/constants';
 
 @Controller('seats')
 export class SeatsController {
@@ -53,7 +53,13 @@ export class SeatsController {
   async claimSeat(@Body() dto: ClaimSeatDto) {
     const invitation = await this.prisma.seatInvitation.findUnique({
       where: { code: dto.code },
-      include: { seat: true },
+      include: { 
+        seat: {
+          include: {
+            lesson: true,
+          },
+        },
+      },
     });
 
     if (!invitation) {
@@ -68,49 +74,51 @@ export class SeatsController {
       throw new HttpException(ERROR_MESSAGES.INVITATION_EXPIRED, HttpStatus.BAD_REQUEST);
     }
 
-    let student = await this.prisma.globalStudent.findFirst({
-      where: { email: dto.studentEmail },
-    });
+    return await this.prisma.$transaction(async (tx) => {
+      let student = await tx.globalStudent.findFirst({
+        where: { email: dto.studentEmail },
+      });
 
-    if (!student) {
-      student = await this.prisma.globalStudent.create({
+      if (!student) {
+        student = await tx.globalStudent.create({
+          data: {
+            email: dto.studentEmail,
+            phone: '',
+            birthDate: new Date(),
+          },
+        });
+      }
+
+      const mapping = await tx.studentMapping.create({
         data: {
-          email: dto.studentEmail,
-          phone: '',
-          birthDate: new Date(),
+          globalStudentId: student.id,
+          resortId: invitation.seat.lesson.resortId,
         },
       });
-    }
 
-    const mapping = await this.prisma.studentMapping.create({
-      data: {
-        globalStudentId: student.id,
-        resortId: DEFAULT_RESORT_ID,
-      },
+      await tx.orderSeat.update({
+        where: { id: invitation.seatId },
+        data: {
+          status: 'claimed',
+          claimedMappingId: mapping.id,
+          claimedAt: new Date(),
+        },
+      });
+
+      await tx.seatInvitation.update({
+        where: { code: dto.code },
+        data: {
+          claimedAt: new Date(),
+          claimedBy: mapping.id,
+        },
+      });
+
+      return {
+        message: '席位認領成功',
+        seatId: invitation.seatId,
+        studentId: student.id,
+      };
     });
-
-    await this.prisma.orderSeat.update({
-      where: { id: invitation.seatId },
-      data: {
-        status: 'claimed',
-        claimedMappingId: mapping.id,
-        claimedAt: new Date(),
-      },
-    });
-
-    await this.prisma.seatInvitation.update({
-      where: { code: dto.code },
-      data: {
-        claimedAt: new Date(),
-        claimedBy: mapping.id,
-      },
-    });
-
-    return {
-      message: '席位認領成功',
-      seatId: invitation.seatId,
-      studentId: student.id,
-    };
   }
 
   @Post(':id/identity')

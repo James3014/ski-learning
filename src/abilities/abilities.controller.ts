@@ -1,23 +1,21 @@
 import { Controller, Get, Query } from '@nestjs/common';
-import { PrismaService } from './prisma.service';
+import { PrismaService } from '../database/prisma.service';
+import { GetAbilitiesQueryDto } from './abilities.dto';
 
 @Controller('abilities')
 export class AbilitiesController {
   constructor(private prisma: PrismaService) {}
 
   @Get()
-  async getAbilities(
-    @Query('sportType') sportType?: string,
-    @Query('skillLevel') skillLevel?: string,
-  ) {
+  async getAbilities(@Query() query: GetAbilitiesQueryDto) {
     const where: any = {};
     
-    if (sportType) {
-      where.sportType = sportType;
+    if (query.sportType) {
+      where.sportType = query.sportType;
     }
     
-    if (skillLevel) {
-      where.skillLevel = parseInt(skillLevel);
+    if (query.skillLevel) {
+      where.skillLevel = parseInt(query.skillLevel);
     }
 
     const abilities = await this.prisma.abilityCatalog.findMany({

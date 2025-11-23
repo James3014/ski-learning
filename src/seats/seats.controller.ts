@@ -1,5 +1,7 @@
 import { Controller, Get, Post, Body, Param, HttpException, HttpStatus } from '@nestjs/common';
-import { PrismaService } from './prisma.service';
+import { PrismaService } from '../database/prisma.service';
+import { ClaimSeatDto, SubmitIdentityDto } from './seats.dto';
+import { DEFAULT_RESORT_ID, ERROR_MESSAGES } from '../common/constants';
 
 @Controller('seats')
 export class SeatsController {
@@ -24,11 +26,11 @@ export class SeatsController {
     });
 
     if (!invitation) {
-      throw new HttpException('邀請碼不存在', HttpStatus.NOT_FOUND);
+      throw new HttpException(ERROR_MESSAGES.INVITATION_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 
     if (new Date() > invitation.expiresAt) {
-      throw new HttpException('邀請碼已過期', HttpStatus.BAD_REQUEST);
+      throw new HttpException(ERROR_MESSAGES.INVITATION_EXPIRED, HttpStatus.BAD_REQUEST);
     }
 
     return {
@@ -48,50 +50,45 @@ export class SeatsController {
   }
 
   @Post('claim')
-  async claimSeat(@Body() body: { code: string; studentEmail: string }) {
-    const { code, studentEmail } = body;
-
+  async claimSeat(@Body() dto: ClaimSeatDto) {
     const invitation = await this.prisma.seatInvitation.findUnique({
-      where: { code },
+      where: { code: dto.code },
       include: { seat: true },
     });
 
     if (!invitation) {
-      throw new HttpException('邀請碼不存在', HttpStatus.NOT_FOUND);
+      throw new HttpException(ERROR_MESSAGES.INVITATION_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 
     if (invitation.claimedAt) {
-      throw new HttpException('席位已被認領', HttpStatus.BAD_REQUEST);
+      throw new HttpException(ERROR_MESSAGES.SEAT_ALREADY_CLAIMED, HttpStatus.BAD_REQUEST);
     }
 
     if (new Date() > invitation.expiresAt) {
-      throw new HttpException('邀請碼已過期', HttpStatus.BAD_REQUEST);
+      throw new HttpException(ERROR_MESSAGES.INVITATION_EXPIRED, HttpStatus.BAD_REQUEST);
     }
 
-    // 建立或查找學生
     let student = await this.prisma.globalStudent.findFirst({
-      where: { email: studentEmail },
+      where: { email: dto.studentEmail },
     });
 
     if (!student) {
       student = await this.prisma.globalStudent.create({
         data: {
-          email: studentEmail,
+          email: dto.studentEmail,
           phone: '',
           birthDate: new Date(),
         },
       });
     }
 
-    // 建立學生映射
     const mapping = await this.prisma.studentMapping.create({
       data: {
         globalStudentId: student.id,
-        resortId: 1, // 暫時固定
+        resortId: DEFAULT_RESORT_ID,
       },
     });
 
-    // 更新席位和邀請碼
     await this.prisma.orderSeat.update({
       where: { id: invitation.seatId },
       data: {
@@ -102,7 +99,7 @@ export class SeatsController {
     });
 
     await this.prisma.seatInvitation.update({
-      where: { code },
+      where: { code: dto.code },
       data: {
         claimedAt: new Date(),
         claimedBy: mapping.id,
@@ -117,41 +114,28 @@ export class SeatsController {
   }
 
   @Post(':id/identity')
-  async submitIdentity(
-    @Param('id') seatId: string,
-    @Body() body: {
-      studentDisplayName: string;
-      birthDate: string;
-      contactEmail: string;
-      contactPhone: string;
-      isMinor: boolean;
-      guardianEmail?: string;
-      hasExternalInsurance: boolean;
-      insuranceProvider?: string;
-      note?: string;
-    },
-  ) {
+  async submitIdentity(@Param('id') seatId: string, @Body() dto: SubmitIdentityDto) {
     const seat = await this.prisma.orderSeat.findUnique({
       where: { id: seatId },
     });
 
     if (!seat) {
-      throw new HttpException('席位不存在', HttpStatus.NOT_FOUND);
+      throw new HttpException(ERROR_MESSAGES.SEAT_NOT_FOUND, HttpStatus.NOT_FOUND);
     }
 
     const form = await this.prisma.seatIdentityForm.create({
       data: {
         seatId,
         status: 'submitted',
-        studentDisplayName: body.studentDisplayName,
-        birthDate: new Date(body.birthDate),
-        contactEmail: body.contactEmail,
-        contactPhone: body.contactPhone,
-        isMinor: body.isMinor,
-        guardianEmail: body.guardianEmail,
-        hasExternalInsurance: body.hasExternalInsurance,
-        insuranceProvider: body.insuranceProvider,
-        note: body.note,
+        studentDisplayName: dto.studentDisplayName,
+        birthDate: new Date(dto.birthDate),
+        contactEmail: dto.contactEmail,
+        contactPhone: dto.contactPhone,
+        isMinor: dto.isMinor,
+        guardianEmail: dto.guardianEmail,
+        hasExternalInsurance: dto.hasExternalInsurance,
+        insuranceProvider: dto.insuranceProvider,
+        note: dto.note,
         submittedAt: new Date(),
       },
     });

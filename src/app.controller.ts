@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { PrismaService } from './prisma.service';
+import { PrismaService } from './database/prisma.service';
 
 @Controller()
 export class AppController {
@@ -7,27 +7,25 @@ export class AppController {
 
     @Get()
     getHello(): string {
-        return 'Hello World from NestJS!';
+        return 'Ski Teaching Assessment API';
     }
 
     @Get('health')
-    getHealth(): any {
-        return { 
-            status: 'ok', 
-            db: 'migration_pending',
-            message: 'Use POST /migration/run to initialize database',
-            timestamp: new Date().toISOString(),
-            env: process.env.NODE_ENV || 'development'
-        };
-    }
-
-    @Get('test-db')
-    async testDb() {
+    async getHealth() {
         try {
-            const result = await this.prisma.$queryRaw`SELECT 1 as test`;
-            return { status: 'success', result };
+            await this.prisma.$queryRaw`SELECT 1`;
+            return { 
+                status: 'ok', 
+                db: 'connected',
+                timestamp: new Date().toISOString(),
+                env: process.env.NODE_ENV || 'development'
+            };
         } catch (error) {
-            return { status: 'error', message: error.message, stack: error.stack };
+            return { 
+                status: 'error', 
+                db: 'disconnected',
+                timestamp: new Date().toISOString()
+            };
         }
     }
 }

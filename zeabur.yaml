@@ -1,0 +1,8 @@
+services:
+  - name: frontend
+    path: web
+    build:
+      type: nodejs
+      framework: nextjs
+    environment:
+      NEXT_PUBLIC_API_URL: https://ski-learning.zeabur.app

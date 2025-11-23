@@ -1,0 +1,7 @@
+build:
+  buildpack: nodejs
+  nodejs:
+    install_command: npm ci
+    build_command: npx prisma generate && npm run build
+    start_command: npm run start:prod
+    node_version: "18"

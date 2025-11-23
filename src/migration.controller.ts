@@ -109,12 +109,12 @@ export class MigrationController {
 
             // 建立能力清單
             const abilities = [
-                { name: '直滑降', category: '基礎', sportType: 'ski', skillLevel: 1, sequenceInLevel: 1, description: '保持平行姿勢直線滑行' },
-                { name: '犁式煞車', category: '基礎', sportType: 'ski', skillLevel: 1, sequenceInLevel: 2, description: '使用內八字姿勢煞車' },
-                { name: '犁式轉彎', category: '轉彎', sportType: 'ski', skillLevel: 2, sequenceInLevel: 1, description: '使用犁式進行轉彎' },
-                { name: '平行轉彎', category: '轉彎', sportType: 'ski', skillLevel: 3, sequenceInLevel: 1, description: '雙板平行進行轉彎' },
-                { name: '落葉飄', category: '基礎', sportType: 'snowboard', skillLevel: 1, sequenceInLevel: 1, description: '橫向滑行控制' },
-                { name: 'J-Turn', category: '轉彎', sportType: 'snowboard', skillLevel: 2, sequenceInLevel: 1, description: 'J字型轉彎' },
+                { name: '直滑降', category: '基礎', sportType: 'SKI', skillLevel: 1, sequenceInLevel: 1, description: '保持平行姿勢直線滑行' },
+                { name: '犁式煞車', category: '基礎', sportType: 'SKI', skillLevel: 1, sequenceInLevel: 2, description: '使用內八字姿勢煞車' },
+                { name: '犁式轉彎', category: '轉彎', sportType: 'SKI', skillLevel: 2, sequenceInLevel: 1, description: '使用犁式進行轉彎' },
+                { name: '平行轉彎', category: '轉彎', sportType: 'SKI', skillLevel: 3, sequenceInLevel: 1, description: '雙板平行進行轉彎' },
+                { name: '落葉飄', category: '基礎', sportType: 'SNOWBOARD', skillLevel: 1, sequenceInLevel: 1, description: '橫向滑行控制' },
+                { name: 'J-Turn', category: '轉彎', sportType: 'SNOWBOARD', skillLevel: 2, sequenceInLevel: 1, description: 'J字型轉彎' },
             ];
 
             for (const ability of abilities) {

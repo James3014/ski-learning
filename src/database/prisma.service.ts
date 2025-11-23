@@ -10,7 +10,12 @@ export class PrismaService extends PrismaClient implements OnModuleInit {
           url: process.env.DIRECT_URL || process.env.DATABASE_URL,
         },
       },
-    });
+      __internal: {
+        engine: {
+          binaryTarget: 'linux-musl-openssl-3.0.x',
+        },
+      },
+    } as any);
   }
 
   async onModuleInit() {
